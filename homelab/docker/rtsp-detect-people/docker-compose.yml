@@ -1,0 +1,22 @@
+services:
+  rtsp_detect:
+    build: .
+    user: 1000:1000
+    restart: unless-stopped
+    volumes:
+      - /media/home_surveillance:/media/home_surveillance
+      - ./:/usr/src/app
+      - /etc/localtime:/etc/localtime
+    working_dir: /usr/src/app
+    ports:
+      - 5000:5000
+    command:
+      [
+        "python3",
+        "rtsp_detect_people.py",
+        "--config",
+        "config.json",
+        "--save",
+        "--email",
+        "--web", "5000",
+      ]

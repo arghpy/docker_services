@@ -1,0 +1,32 @@
+services:
+  app:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    restart: unless-stopped
+    ports:
+      - 443:443
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Europe/Bucharest
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - db
+    volumes:
+      - /nextcloud/config:/config
+      - /nextcloud/data:/data
+      - /backup:/backup
+      - /media/home_surveillance:/home_surveillance
+
+  db:
+    image: postgres:16
+    container_name: nextcloud-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - /nextcloud/db:/var/lib/postgresql/data

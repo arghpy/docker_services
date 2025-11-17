@@ -1,0 +1,51 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services/
+
+- Media:
+  - Immich:
+      icon: immich.svg
+      href: https://immich.<OWNED_DOMAIN>
+      description: Photos and Videos
+  - Jellyfin:
+      icon: jellyfin.svg
+      href: https://jellyfin.<OWNED_DOMAIN>
+      description: Movies and shows
+  - Nextcloud:
+      icon: nextcloud.svg
+      href: https://nextcloud.<OWNED_DOMAIN>
+      description: File server
+
+- Monitoring:
+  - Grafana:
+      icon: grafana.svg
+      href: https://grafana.<OWNED_DOMAIN>
+      description: Monitoring Visualization
+  - Prometheus:
+      icon: prometheus.svg
+      href: https://prometheus.<OWNED_DOMAIN>
+      description: Monitoring Database
+
+- Surveillance:
+  - Camera-front:
+      icon: reolink.svg
+      href: https://camera-front.<OWNED_DOMAIN>
+      description: Security camera
+  - Live Camera-front:
+      icon: youtube.svg
+      href: https://live-camera-front.<OWNED_DOMAIN>
+      description: Live Security camera
+  - Camera-back:
+      icon: hikvision.svg
+      href: https://camera-back.<OWNED_DOMAIN>
+      description: Security camera
+
+- Other:
+  - Vaultwarden:
+      icon: bitwarden.svg
+      href: https://vaultwarden.<OWNED_DOMAIN>
+      description: Password manager
+  - PiHole:
+      icon: pi-hole.svg
+      href: https://pihole.<OWNED_DOMAIN>/admin
+      description: Network-wide Ad Blocking

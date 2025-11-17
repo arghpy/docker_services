@@ -1,0 +1,22 @@
+{
+  "timeout": "<int>",
+  "confidence": "<float_between_0_1>",
+  "rtsp": {
+    "feed": "<IP>",
+    "user": "<USER>",
+    "password": "<PASSWORD>",
+    "save_video": {
+      "path": "/path/to/saved/videos",
+      "name": "<video_name>",
+      "optional_force_fps": "<int>"
+    }
+  },
+  "email": {
+    "user": "<USER_EMAIL>",
+    "password": "<PASSWORD>",
+    "server": "<SERVER>",
+    "port": "<PORT>",
+    "subject": "<SUBJECT>",
+    "recipients": ["<EMAIL_1>", "<EMAIL_2>"]
+  }
+}
