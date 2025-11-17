@@ -1,0 +1,49 @@
+{
+	email <PRIVATE_EMAIL_ADDRESS>
+}
+
+*.<OWNED_DOMAIN> {
+	tls {
+		dns cloudflare "<CLOUDFARE_API_KEY>"
+		resolvers 1.1.1.1
+	}
+}
+
+# Reverse proxies
+home.<OWNED_DOMAIN> {
+	reverse_proxy http://homelab:6500
+}
+immich.<OWNED_DOMAIN> {
+	reverse_proxy http://homelab:2283
+}
+jellyfin.<OWNED_DOMAIN> {
+	reverse_proxy http://homelab:8096
+}
+grafana.<OWNED_DOMAIN> {
+	reverse_proxy http://homelab:3000
+}
+prometheus.<OWNED_DOMAIN> {
+	reverse_proxy http://homelab:9090
+}
+vaultwarden.<OWNED_DOMAIN> {
+	reverse_proxy http://homelab:8000
+}
+camera-front.<OWNED_DOMAIN> {
+	reverse_proxy http://camera-front:80
+}
+live-camera-front.<OWNED_DOMAIN> {
+	reverse_proxy http://homelab:5000
+}
+camera-back.<OWNED_DOMAIN> {
+	reverse_proxy http://camera-back:80
+}
+pihole.<OWNED_DOMAIN> {
+	reverse_proxy jumpserver:8080
+}
+nextcloud.<OWNED_DOMAIN> {
+	reverse_proxy https://homelab:443 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
+}
